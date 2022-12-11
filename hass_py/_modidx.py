@@ -5,5 +5,4 @@ d = { 'settings': { 'branch': 'master',
                 'doc_host': 'https://ddobrinskiy.github.io',
                 'git_url': 'https://github.com/ddobrinskiy/hass_py',
                 'lib_path': 'hass_py'},
-  'syms': { 'hass_py.core': {'hass_py.core.foo': ('core.html#foo', 'hass_py/core.py')},
-            'hass_py.utils': {'hass_py.utils.foo': ('utils.html#foo', 'hass_py/utils.py')}}}
+  'syms': {'hass_py.utils': {'hass_py.utils.foo': ('utils.html#foo', 'hass_py/utils.py')}}}
