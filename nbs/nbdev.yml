@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "hass_py"
+  site-url: "https://ddobrinskiy.github.io/hass_py"
+  description: "My personal goodies for hass.io"
+  repo-branch: master
+  repo-url: "https://github.com/ddobrinskiy/hass_py"
