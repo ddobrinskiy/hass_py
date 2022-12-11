@@ -4,5 +4,10 @@
 __all__ = ['foo']
 
 # %% ../nbs/00_utils.ipynb 3
+import datetime
+
+import requests
+
+# %% ../nbs/00_utils.ipynb 4
 def foo():
     pass

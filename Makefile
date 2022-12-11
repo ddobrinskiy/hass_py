@@ -2,7 +2,8 @@
 # run nbdev_build_lib to convert notebooks to modules
 
 format:
-	black nbs/*.ipynb
+	nbqa black nbs/
+	nbqa isort nbs/
 
 export:
 	nbdev_export
