@@ -5,4 +5,12 @@ d = { 'settings': { 'branch': 'master',
                 'doc_host': 'https://ddobrinskiy.github.io',
                 'git_url': 'https://github.com/ddobrinskiy/hass_py',
                 'lib_path': 'hass_py'},
-  'syms': {'hass_py.utils': {'hass_py.utils.foo': ('utils.html#foo', 'hass_py/utils.py')}}}
+  'syms': { 'hass_py.utils': { 'hass_py.utils.DependencyParser': ('utils.html#dependencyparser', 'hass_py/utils.py'),
+                               'hass_py.utils.DependencyParser.__init__': ('utils.html#dependencyparser.__init__', 'hass_py/utils.py'),
+                               'hass_py.utils.DependencyParser.dev_requirements': ( 'utils.html#dependencyparser.dev_requirements',
+                                                                                    'hass_py/utils.py'),
+                               'hass_py.utils.DependencyParser.min_python': ('utils.html#dependencyparser.min_python', 'hass_py/utils.py'),
+                               'hass_py.utils.DependencyParser.pipenv_to_setuptools': ( 'utils.html#dependencyparser.pipenv_to_setuptools',
+                                                                                        'hass_py/utils.py'),
+                               'hass_py.utils.DependencyParser.requirements': ( 'utils.html#dependencyparser.requirements',
+                                                                                'hass_py/utils.py')}}}

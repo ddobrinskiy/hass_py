@@ -11,11 +11,9 @@ export:
 
 
 mypy:
-	# mypy
-	nbqa mypy nbs  --ignore-missing-imports
+	nbqa mypy nbs --ignore-missing-imports
 
-test: mypy
-	# nbdev_test
+test:
 	nbdev_test --n_workers 4
 
 prepare:
@@ -25,7 +23,7 @@ prepare:
 docs:
 	nbdev_docs
 
-all: format prepare mypy test
+all: format prepare mypy
 
 prepare_dev_env:
 	pipenv install --dev

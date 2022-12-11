@@ -24,11 +24,14 @@ statuses = [ '1 - Planning', '2 - Pre-Alpha', '3 - Alpha',
     '4 - Beta', '5 - Production/Stable', '6 - Mature', '7 - Inactive' ]
 py_versions = '3.6 3.7 3.8 3.9 3.10'.split()
 
-requirements = cfg.get('requirements','').split()
-if cfg.get('pip_requirements'): requirements += cfg.get('pip_requirements','').split()
-min_python = cfg['min_python']
+from hass_py.utils import DependencyParser
+dp = DependencyParser('./Pipfile')
+
+min_python = dp.min_python
+requirements = dp.requirements
+dev_requirements = dp.dev_requirements
+
 lic = licenses.get(cfg['license'].lower(), (cfg['license'], None))
-dev_requirements = (cfg.get('dev_requirements') or '').split()
 
 setuptools.setup(
     name = cfg['lib_name'],
@@ -44,7 +47,7 @@ setuptools.setup(
     install_requires = requirements,
     extras_require={ 'dev': dev_requirements },
     dependency_links = cfg.get('dep_links','').split(),
-    python_requires  = '>=' + cfg['min_python'],
+    python_requires  = '>=' + min_python,
     long_description = open('README.md').read(),
     long_description_content_type = 'text/markdown',
     zip_safe = False,
