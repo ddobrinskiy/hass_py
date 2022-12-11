@@ -17,7 +17,7 @@ pip install hass_py
 Fill me in please! Don’t forget code examples:
 
 ``` python
-1+1
+1 + 1
 ```
 
     2
@@ -25,3 +25,8 @@ Fill me in please! Don’t forget code examples:
 ## ToDo:
 
 - [ ] add requirements parsing from Pipfile
+
+## How to develop locally
+
+run `make prepare_dev_env` to install the dev dependencies and run the
+tests
