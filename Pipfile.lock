@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fbd0d90f5ff80e0fa596546412dee653a027a292fce456b4824c883efffa12e8"
+            "sha256": "57783e0e0e83d4aec294940ee5cd4af611853c91775cecd74c66f077fa064452"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -182,6 +182,14 @@
             ],
             "index": "pypi",
             "version": "==22.12.0"
+        },
+        "blacken-docs": {
+            "hashes": [
+                "sha256:385eb3db60faddceb218e54e2677821e1dbd441d0473f95cc4b7206a52d5bb62",
+                "sha256:5fd22ba1f3ab10d7013427019b4e7b83f6f4aca00c898645e0481ce7966b0aa4"
+            ],
+            "index": "pypi",
+            "version": "==1.12.1"
         },
         "bleach": {
             "hashes": [
@@ -1153,7 +1161,7 @@
                 "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
                 "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_full_version < '3.11.0a7'",
             "version": "==2.0.1"
         },
         "tornado": {

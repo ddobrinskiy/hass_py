@@ -4,12 +4,18 @@
 format:
 	nbqa black nbs/
 	nbqa isort nbs/
+	nbqa blacken-docs nbs/ --nbqa-md
 
 export:
 	nbdev_export
 
 test:
+	# nbdev_test
 	nbdev_test --n_workers 4
+
+	# mypy
+	nbqa mypy nbs  --ignore-missing-imports
+
 
 docs:
 	nbdev_docs
