@@ -28,5 +28,5 @@ Fill me in please! Don’t forget code examples:
 
 ## How to develop locally
 
-run `make prepare_dev_env` to install the dev dependencies and run the
-tests
+run `make prepare_dev_env` to install the dev dependencies, pre-commit
+hooks, run the tests

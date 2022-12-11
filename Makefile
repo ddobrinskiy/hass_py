@@ -20,6 +20,8 @@ test:
 docs:
 	nbdev_docs
 
+all: format export test
+
 prepare_dev_env:
 	pipenv install --dev
 	pre-commit install
@@ -27,5 +29,3 @@ prepare_dev_env:
 	nbdev_install
 	nbdev_test --n_workers 4
 	nbdev_docs
-
-all: format export test
