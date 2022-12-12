@@ -32,12 +32,14 @@ class DependencyParser:
         elif (contraints != "*") and isinstance(contraints, str):
             res = f"{package_name}{contraints}"
         elif isinstance(contraints, dict):
-            if extras := contraints.get("extras"):
-                extras = [f"'{e}'" for e in extras]  # add ' to extras in list
-                package_name = f"{package_name}[{','.join(extras)}]"
-                res = f"{package_name}{contraints['version']}"
-            else:
-                res = f"{package_name}{contraints['version']}"
+            res = f"{package_name}{contraints['version']}"
+
+            # if extras := contraints.get("extras"):
+            #     extras = [f"'{e}'" for e in extras]  # add ' to extras in list
+            #     package_name = f"{package_name}[{','.join(extras)}]"
+            #     res = f"{package_name}{contraints['version']}"
+            # else:
+            #     res = f"{package_name}{contraints['version']}"
         else:
             raise ValueError(f"Could not parse {package_name}, {contraints}")
 
