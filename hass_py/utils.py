@@ -8,6 +8,15 @@ import toml
 
 
 class DependencyParser:
+    """parse a pipfile to get the requirements
+
+    Parameters
+    ----------
+    path_to_pipfile : str
+        path to the pipfile
+
+    """
+
     def __init__(self, path_to_pipfile: str):
         with open(path_to_pipfile) as f:
             self.pipfile = toml.load(f)
