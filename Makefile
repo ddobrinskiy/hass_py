@@ -11,7 +11,7 @@ export:
 
 
 mypy:
-	nbqa mypy nbs --ignore-missing-imports
+	nbqa mypy nbs --ignore-missing-imports --nbqa-exclude=nbs/01_bt.ipynb
 
 test:
 	nbdev_test --n_workers 4
