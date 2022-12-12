@@ -23,7 +23,10 @@ prepare:
 docs:
 	nbdev_docs
 
-bump: all docs
+generate_deps: Pipfile
+	python setup_generate.py
+
+bump: all docs generate_deps
 	nbdev_bump_version
 
 all: format prepare mypy
