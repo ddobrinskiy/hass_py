@@ -4,14 +4,16 @@
 __all__ = ['DependencyParser']
 
 # %% ../nbs/00_utils.ipynb 5
-from pipfile import Pipfile
+import toml
 
 
 class DependencyParser:
     def __init__(self, path_to_pipfile: str):
-        self.pipfile = Pipfile.load(filename=path_to_pipfile)
+        with open(path_to_pipfile) as f:
+            self.pipfile = toml.load(f)
 
-    def pipenv_to_setuptools(self, package_name: str, contraints: str | dict) -> str:
+    @staticmethod
+    def pipenv_to_setuptools(package_name: str, contraints: str | dict) -> str:
         if contraints == "*":
             res = f"{package_name}"
         elif (contraints != "*") and isinstance(contraints, str):
@@ -30,18 +32,17 @@ class DependencyParser:
 
     @property
     def min_python(self) -> str:
-        return self.pipfile.data["_meta"]["requires"]["python_version"]
+        return self.pipfile["requires"]["python_version"]
 
     @property
     def requirements(self):
         return [
-            self.pipenv_to_setuptools(k, v)
-            for k, v in self.pipfile.data["default"].items()
+            self.pipenv_to_setuptools(k, v) for k, v in self.pipfile["packages"].items()
         ]
 
     @property
     def dev_requirements(self):
         return [
             self.pipenv_to_setuptools(k, v)
-            for k, v in self.pipfile.data["develop"].items()
+            for k, v in self.pipfile["dev-packages"].items()
         ]

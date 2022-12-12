@@ -10,5 +10,6 @@ repos:
     hooks:
       - id: nbqa-mypy
         args: ["--ignore-missing-imports"]
+        additional_dependencies: ["mypy", "types-toml", "types-requests"]
       - id: nbqa-black
       - id: nbqa-isort

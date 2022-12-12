@@ -23,6 +23,9 @@ prepare:
 docs:
 	nbdev_docs
 
+bump: all docs
+	nbdev_bump_version
+
 all: format prepare mypy
 
 prepare_dev_env:
