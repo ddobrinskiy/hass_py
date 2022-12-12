@@ -17,9 +17,9 @@ jupyter = "==1.*"
 mypy = "*"
 nbdev = "==2.3.9"
 nbqa = "==1.5.3"
-pipfile = "*"
 pre-commit = "==2.20"
 types-requests = "*"
+types-toml = "*"
 
 [requires]
 python_version = "3.10"
