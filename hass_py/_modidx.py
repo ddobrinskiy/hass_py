@@ -16,4 +16,5 @@ d = { 'settings': { 'branch': 'master',
                                'hass_py.utils.DependencyParser.pipenv_to_setuptools': ( 'utils.html#dependencyparser.pipenv_to_setuptools',
                                                                                         'hass_py/utils.py'),
                                'hass_py.utils.DependencyParser.requirements': ( 'utils.html#dependencyparser.requirements',
-                                                                                'hass_py/utils.py')}}}
+                                                                                'hass_py/utils.py'),
+                               'hass_py.utils.find_dir': ('utils.html#find_dir', 'hass_py/utils.py')}}}
