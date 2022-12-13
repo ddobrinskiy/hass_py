@@ -9,9 +9,9 @@ format:
 export:
 	nbdev_export
 
-
 mypy:
-	nbqa mypy nbs --ignore-missing-imports --nbqa-exclude=nbs/01_bt.ipynb
+	# nbqa mypy nbs --ignore-missing-imports --nbqa-exclude=nbs/01_bt.ipynb
+	nbqa mypy nbs --ignore-missing-imports --check-untyped-defs
 
 test:
 	nbdev_test --n_workers 4

@@ -9,7 +9,10 @@ repos:
     rev: 1.5.3
     hooks:
       - id: nbqa-mypy
-        args: ["--ignore-missing-imports", "--nbqa-exclude=nbs/01_bt.ipynb"]
+        args: ["--ignore-missing-imports", "--check-untyped-defs"]
+        exclude: "nbs_rnd/.*"
         additional_dependencies: ["mypy", "types-toml", "types-requests"]
       - id: nbqa-black
+        exclude: "nbs_rnd/.*"
       - id: nbqa-isort
+        exclude: "nbs_rnd/.*"
