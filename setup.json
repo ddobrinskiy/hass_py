@@ -6,8 +6,7 @@
         "pandas",
         "bleak",
         "rich",
-        "aranet4",
-        "pyobjc"
+        "aranet4"
     ],
     "dev_requirements": [
         "black==22.12.0",

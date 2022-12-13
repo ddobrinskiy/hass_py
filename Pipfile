@@ -9,7 +9,6 @@ pandas = "*"
 bleak = "*"
 rich = "*"
 aranet4 = "*"
-pyobjc = "*"
 
 [dev-packages]
 black = {version = "==22.12.0", extras = ["jupyter"]}
