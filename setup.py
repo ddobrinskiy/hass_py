@@ -2,6 +2,7 @@ from pkg_resources import parse_version
 from configparser import ConfigParser
 import json
 import setuptools
+from setuptools import setup
 
 assert parse_version(setuptools.__version__) >= parse_version("36.2")
 
@@ -48,17 +49,8 @@ py_versions = "3.6 3.7 3.8 3.9 3.10 3.11".split()
 
 lic = licenses.get(cfg["license"].lower(), (cfg["license"], None))
 
-# get dependencies from setup.json
-with open("setup.json") as f:
-    deps = json.load(f)
 
-min_python = deps["min_python"]
-requirements = deps["requirements"]
-dev_requirements = deps["dev_requirements"]
-
-
-from setuptools import setup
-
+min_python = cfg["min_python"]
 setup(
     name=cfg["lib_name"],
     license=lic[0],
