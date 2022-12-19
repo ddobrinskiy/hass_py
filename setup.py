@@ -2,6 +2,7 @@ from pkg_resources import parse_version
 from configparser import ConfigParser
 import json
 import setuptools
+from setuptools import setup
 
 assert parse_version(setuptools.__version__) >= parse_version("36.2")
 
@@ -48,16 +49,9 @@ py_versions = "3.6 3.7 3.8 3.9 3.10 3.11".split()
 
 lic = licenses.get(cfg["license"].lower(), (cfg["license"], None))
 
-# get dependencies from setup.json
-with open("setup.json") as f:
-    deps = json.load(f)
 
-min_python = deps["min_python"]
-requirements = deps["requirements"]
-dev_requirements = deps["dev_requirements"]
-
-
-setuptools.setup(
+min_python = cfg["min_python"]
+setup(
     name=cfg["lib_name"],
     license=lic[0],
     classifiers=[
@@ -73,9 +67,25 @@ setuptools.setup(
     url=cfg["git_url"],
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=requirements,
-    extras_require={"dev": dev_requirements},
-    dependency_links=cfg.get("dep_links", "").split(),
+    install_requires=["requests==2.28", "pandas", "bleak", "rich", "aranet4"],
+    extras_require={
+        "dev": [
+            "black[jupyter]==22.12.0",
+            "blacken-docs==1.12.1",
+            "isort==5.10.1",
+            "jupyter==1.*",
+            "mypy",
+            "nbdev==2.3.9",
+            "nbqa==1.5.3",
+            "pre-commit==2.20",
+            "types-requests",
+            "types-toml",
+            "ipykernel",
+            "pipenv-setup",
+            "vistir==0.6.1",
+        ],
+    },
+    dependency_links=[],
     python_requires=">=" + min_python,
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",

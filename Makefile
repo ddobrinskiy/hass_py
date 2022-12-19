@@ -10,8 +10,7 @@ export:
 	nbdev_export
 
 mypy:
-	# nbqa mypy nbs --ignore-missing-imports --nbqa-exclude=nbs/01_bt.ipynb
-	nbqa mypy nbs --ignore-missing-imports --check-untyped-defs
+	nbqa mypy nbs/ --ignore-missing-imports --check-untyped-defs
 
 test:
 	nbdev_test --n_workers 4
@@ -23,10 +22,11 @@ prepare:
 docs:
 	nbdev_docs
 
-generate_deps: Pipfile
-	python setup_generate.py
+pipenv_setup: Pipfile
+	pipenv-setup sync --pipfile --dev
 
-bump: all docs generate_deps
+
+bump: all docs pipenv_setup
 	nbdev_bump_version
 
 all: format prepare mypy
