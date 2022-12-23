@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "hass_py",
+    "section": "",
+    "text": "Full documentation can be found at https://ddobrinskiy.github.io/hass_py/"
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "hass_py",
+    "section": "Install",
+    "text": "Install\npip install hass_py"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "hass_py",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1 + 1\n\n2"
+  },
+  {
+    "objectID": "index.html#todo",
+    "href": "index.html#todo",
+    "title": "hass_py",
+    "section": "ToDo:",
+    "text": "ToDo:\n\nadd requirements parsing from Pipfile"
+  },
+  {
+    "objectID": "index.html#how-to-develop-locally",
+    "href": "index.html#how-to-develop-locally",
+    "title": "hass_py",
+    "section": "How to develop locally",
+    "text": "How to develop locally\nrun make prepare_dev_env to install the dev dependencies, pre-commit hooks, run the tests"
+  },
+  {
+    "objectID": "bt.html",
+    "href": "bt.html",
+    "title": "bt",
+    "section": "",
+    "text": "http://www.blesstags.eu/2018/08/services-characteristics-descriptors.html\nA BLE device has services, characteristics, and descriptors in the following tree structure:\n\n\n\n\n    graph LR \n    A[BLE Device] --> S1[Service]\n    A --> S2[Service]\n\n    S1 --> C1[Characteristic]\n    C1 --> D1[Descriptor]\n    C1 --> D2[Descriptor]\n\n\n    S1 --> C2[Characteristic]\n\n    S2 --> C3[Characteristic]\n    C3 --> D3[Descriptor]\n\n    S2 --> C4[Characteristic]\n\n\n\n\n\n\n\n\n\nThe behavior of a BLE device is given by the different Services that encapsulate different parts of this behavior\nMainly, a service is a container for different data items – these data items are called are called Characteristics.\nA Characteristic is a data item that can be either: * read (e.g. a sensor value, battery level, etc.) * or written (e.g. a configuration value, etc.).\nDescriptor - ?"
+  },
+  {
+    "objectID": "bt.html#aranet4-ble-services",
+    "href": "bt.html#aranet4-ble-services",
+    "title": "bt",
+    "section": "Aranet4 BLE services",
+    "text": "Aranet4 BLE services\n\nsource\n\nAranetScanner\n\n AranetScanner ()\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nAranetDevice\n\n AranetDevice (address:str, name:str)\n\nPublishing Aranet4 data to mqtt\n\n\n\n\n    graph LR \n    PY[Python] --> MQTT[MQTT]\n    MQTT --> HA[Home Assistant]\n    MQTT --> G[Grafana]"
+  },
+  {
+    "objectID": "utils.html",
+    "href": "utils.html",
+    "title": "utils",
+    "section": "",
+    "text": "/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/fastcore/docscrape.py:225: UserWarning: Unknown section Raises\n  else: warn(msg)\n\nsource\n\nfind_dir\n\n find_dir (dirname:str)\n\nfind dirname in cwd or cwd.parent\n\n\n\n\nType\nDetails\n\n\n\n\ndirname\nstr\ndirname to find\n\n\nReturns\nPath\npath to dirname"
+  }
+]
